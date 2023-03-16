@@ -2,31 +2,20 @@
 // Variables de los selectores Ej. Css h1{}
 
 const h1 = document.querySelector('h1');
-const p = document.querySelector('p');
-const parrafito = document.querySelector('.parrafito');
-const pid = document.getElementById('pid');
-const input = document.querySelector('input');
 
-console.log(input.value)
+const input1 = document.querySelector('#inptCalculo1');
+const input2 = document.querySelector('#inptCalculo2');
+const btnCalculo = document.querySelector('#btnCalcular');
+const result = document.querySelector('#result');
+const formulario = document.querySelector('#formulario');
 
-console.log(
-    {h1,
-    p,
-    parrafito,
-    pid,
-    input}
-)
 
-//h1.innerText = 'Patito <br> Feo'
-//console.log( h1.setAttribute('class', 'rojo'))
+formulario.addEventListener('submit', btnOnclik)
 
-h1.classList.add('rojo')
-h1.classList.remove('verde')
-input.value = 456
+function btnOnclik (event){
+    event.preventDefault()
+    const sumaInputs = input1.value + input2.value 
+    
 
-const img = document.createElement('img')
-
-img.setAttribute('src', 'https://http2.mlstatic.com/D_NQ_NP_909644-MCO49114589585_022022-V.jpg')
-
-pid.textContent = ""
-pid.innerHTML(img)
+    result.textContent = sumaInputs
+}
